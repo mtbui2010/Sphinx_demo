@@ -5,3 +5,4 @@ SphinxDemo_code
    :maxdepth: 4
 
    main
+   moduleA

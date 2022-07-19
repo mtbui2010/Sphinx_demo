@@ -45,15 +45,28 @@ sphinx-apidoc -f -o source  $CODE_ROOT
 make html
 ```
 
+### 0. Modify code and rebuild html
+```sh
+sphinx-apidoc -f -o source  $CODE_ROOT
+make html
+```
+
 ### 0. Code sample for auto generated-documenting
 ```sh
-def sum_list(input: list) -> float:
-    '''
-    :param input: a list of numbers
-    :return: sum of all list's member
-    '''
-    return sum(input)
+import cv2
+import numpy as np
+from typing import Tuple
+
+class A:
+    def resize_im(self, im: np.ndarray, out_size: Tuple[int, int])->np.ndarray:
+        '''
+        :param im: rgb (mxnx3 np.ndarray) or gray (mxn np.ndarray) image
+        :param out_size:  output's size (width, height)
+        :return: resized image
+        '''
+        return cv2.resize(im, dsize=out_size, interpolation=cv2.INTER_CUBIC)
 ```
+
 
 # II. Publish on Github.io
 
