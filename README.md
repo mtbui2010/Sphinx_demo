@@ -45,12 +45,23 @@ sphinx-apidoc -f -o source  $CODE_ROOT
 make html
 ```
 
+### 0. Code sample for auto generated-documenting
+```sh
+def sum_list(input: list) -> float:
+    '''
+    :param input: a list of numbers
+    :return: sum of all list's member
+    '''
+    return sum(input)
+```
+
 # II. Publish on Github.io
 
 - Copy "build/html" to $ROOT and rename to "docs"
 - Add  an empty file ".nojekyll"
 - Push to a github repository 
 - In settings/pages, point "source" to docs
+- In About settings, specific URL for website
 
 ## References:
 - [Sphinx Guide](https://betterprogramming.pub/auto-documenting-a-python-project-using-sphinx-8878f9ddc6e9)
